@@ -71,5 +71,5 @@ $ ./hivecontrol.py hive.yaml
   for all of your hive devices
 - Chart the telemetry with Grafana
 
-See telemetry.py for an example of how to retrieve telemetry from the Home
+See [telemetry.py](https://github.com/m4rkw/hivecontrol/blob/main/telemetry.py) for an example of how to retrieve telemetry from the Home
 Assistant API and from OpenWeatherMap.
