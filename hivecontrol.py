@@ -65,6 +65,9 @@ class HiveSchedules:
                 self.out(f"ignoring {device['hiveName']} (not in config)\n")
                 continue
 
+            if 'mode' not in devices[device['hiveName']]:
+                continue
+
             target_mode = devices[device['hiveName']]['mode'].upper()
 
             if target_mode in ['MANUAL','SCHEDULE'] and self.in_away_mode():
@@ -83,6 +86,10 @@ class HiveSchedules:
         for device in session.deviceList['climate']:
             if device['hiveName'] not in devices:
                 self.out(f"ignoring {device['hiveName']} (not in config)\n")
+                continue
+
+            if 'schedule' not in devices[device['hiveName']]:
+                self.out(f"ignoring {device['hiveName']} (no schedule config)\n")
                 continue
 
             self.out(f"checking schedule for zone: {device['hiveName']} ... ")
