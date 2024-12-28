@@ -4,7 +4,6 @@ import os
 import sys
 import json
 import yaml
-import math
 import datetime
 from pyhiveapi import Auth, API
 from pyhiveapi.hive import Hive
@@ -29,15 +28,7 @@ class HiveSchedules:
 
         self.out("authenticating ... ")
 
-        for i in range(0, 3):
-            try:
-                session = self.authenticate()
-                break
-            except Exception as e:
-                if i == 2:
-                    raise e
-
-                time.sleep(3)
+        session = self.authenticate()
 
         self.out("OK\n")
 
