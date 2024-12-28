@@ -1,0 +1,72 @@
+---
+hive_username: 
+hive_password: 
+device_key: 
+device_group_key: 
+device_password: 
+
+# EXAMPLE: override schedule on specific dates
+
+#override:
+#  devices:
+#    'Living room':
+#      schedule:
+#        2024.12.27:
+#          default:
+#            '00:00': 19
+#        2024.12.28:
+#          default:
+#            '00:00': 19
+#        2024.12.29:
+#          default:
+#            '00:00': 19
+#        2024.12.30:
+#          default:
+#            '00:00': 19
+
+devices:
+- name: Hallway
+  mode: schedule
+  schedule:
+    monday:
+      '06:00': 19
+      '00:00': 17
+    default:
+      '07:00': 19
+      '00:00': 17
+
+- name: Kids bedroom
+  mode: schedule
+  schedule:
+    default:
+      '00:00': 19
+
+- name: Dining room
+  mode: schedule
+  schedule:
+    default:
+      '07:00': 19
+      '00:00': 17
+
+- name: Living room
+  mode: schedule
+  schedule:
+    default:
+      '09:00': 19
+      '21:00': 15
+
+- name: Main bedroom
+  mode: schedule
+  schedule:
+    default:
+      '00:00': 17
+      '07:00': 19
+      '10:00': 7
+      '19:00': 19
+
+- name: Office
+  mode: schedule
+  schedule:
+    default:
+      '00:00': 7
+      '07:00': 19
